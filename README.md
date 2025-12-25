@@ -21,7 +21,7 @@ The custom parser supports standard chemical formulas consisting of elements, su
 Some examples:
 
 ```text
-$ python main.py -l KNO3 -l C12H22O11 -r N2 -r CO2 -r H2O -r K2CO3 -v
+$ python3 main.py -l KNO3 -l C12H22O11 -r N2 -r CO2 -r H2O -r K2CO3 -v
 Left side:  KNO3, C12H22O11
 Right side:  N2, CO2, H2O, K2CO3
 Elements left: {'K': 1, 'N': 1, 'O': 3}, {'C': 12, 'H': 22, 'O': 11}
