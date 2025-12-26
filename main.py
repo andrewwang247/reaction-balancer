@@ -11,7 +11,7 @@ from balance import balance
 # pylint: disable=no-value-for-parameter
 
 
-def to_string(coefs: ndarray, mols: Tuple[str, ...]) -> str:
+def display_solution(coefs: ndarray, mols: Tuple[str, ...]) -> str:
     """Construct string of coefficients and molecules."""
     multipled = []
     for coef, mol in zip(coefs, mols):
@@ -28,21 +28,24 @@ def to_string(coefs: ndarray, mols: Tuple[str, ...]) -> str:
         help='Set verbosity of solving process.')
 def main(left: Tuple[str, ...], right: Tuple[str, ...], verbose: bool):
     """Balance user-provided chemical reactions."""
-    if verbose:
-        print('Molecules (L): ', ', '.join(left))
-        print('Molecules (R): ', ', '.join(right))
     left_mols = [parse(mol) for mol in left]
     right_mols = [parse(mol) for mol in right]
     if verbose:
-        print('Elements (L):', ', '.join(
-            map(str, (dict(mol) for mol in left_mols))))
-        print('Elements (R):', ', '.join(
-            map(str, (dict(mol) for mol in left_mols))))
-    solutions = balance(left_mols, right_mols, verbose)
+        print('Molecules (L):')
+        for mol, elem_counts in zip(left, left_mols):
+            print(f'\t{mol}:', dict(elem_counts))
+        print('Molecules (R):')
+        for mol, elem_counts in zip(right, right_mols):
+            print(f'\t{mol}:', dict(elem_counts))
+    solutions = list(balance(left_mols, right_mols, verbose))
+    if len(solutions) == 0:
+        print('No solutions found.')
+    else:
+        print(f'{len(solutions)} solution{"" if len(solutions) == 1 else "s"}:')
     for left_coef, right_coef in solutions:
-        left_disp = to_string(left_coef, left)
-        right_disp = to_string(right_coef, right)
-        print(left_disp, '->', right_disp)
+        left_disp = display_solution(left_coef, left)
+        right_disp = display_solution(right_coef, right)
+        print(f'\t{left_disp} -> {right_disp}')
 
 
 if __name__ == '__main__':
