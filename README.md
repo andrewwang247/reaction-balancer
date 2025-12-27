@@ -106,23 +106,25 @@ Execute unit tests for parsing with `pytest`.
 
 ## Methodology
 
-For each chemical reaction, the balancer counts the elements in each component. It uses these values to generate a system of linear equations that represent the constraints of a possible solution. A basis of the corresponding matrix null space provides the coefficients of the balanced equation.
+For each chemical reaction, the balancer counts the elements in each component. It uses these values to generate a system of linear equations that represent the constraints of a possible solution. Turning the system into a matrix and computing the null space yields solutions for the coefficients of the balanced equation.
 
-An example is shown below:
+We work through an example for $a \cdot CH_4 + b \cdot O_2 \to c \cdot CO_2 + d \cdot H_2 O$.
+- $C$ constraint: $1a + 0b = 1c + 0d$
+- $O$ constraint: $0a + 2b = 2c + 1d$
+- $H$ constraint: $4a + 0b = 0c + 2d$
 
-```text
-Problem: a CH4 + b O2 -> c CO2 + d H2O
-
-C constraint: 1a + 0b = 1c + 0d
-O constraint: 0a + 2b = 2c + 1d
-H constraint: 4a + 0b = 0c + 2d
-
-Matrix form:
-[[ 1  0 -1  0]
- [ 0  2 -2 -1]
- [ 4  0  0 -2]]
-
-Kernel vector: [1 2 1 2]
-
-Solution: CH4 + 2 O2 -> CO2 + 2 H2O
+Computing the matrix null space
+```math
+\ker
+\begin{pmatrix}
+1 & 0 & -1 & 0 \\
+0 & 2 & -2 & -1 \\
+4 & 0 & 0 & -2
+\end{pmatrix}
+= \text{span}
+\begin{pmatrix}
+1 & 2 & 1 & 2
+\end{pmatrix}
 ```
+
+Thus, the balanced equation is $CH_4 + 2 \\, O_2 \to CO_2 + 2 \\, H_2 O$.
