@@ -1,7 +1,7 @@
 """
 Unit tests for chemical parser.
 
-Copyright 2022. Andrew Wang.
+Copyright 2026. Andrew Wang.
 """
 from typing import Dict
 from parse import parse

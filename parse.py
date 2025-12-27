@@ -1,7 +1,7 @@
 """
 Chemical formula recursive parser.
 
-Copyright 2022. Andrew Wang.
+Copyright 2026. Andrew Wang.
 """
 from typing import DefaultDict
 from itertools import chain

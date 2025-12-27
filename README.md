@@ -30,16 +30,16 @@ Molecules (R):
 	CO2: {'C': 1, 'O': 2}
 	H2O: {'H': 2, 'O': 1}
 	K2CO3: {'K': 2, 'C': 1, 'O': 3}
-5 distinct elements: ['O', 'K', 'N', 'H', 'C']
+Distinct elements (5): ['O', 'C', 'H', 'K', 'N']
 Linear system of equations matrix:
 [[ 3 11  0 -2 -1 -3]
- [ 1  0  0  0  0 -2]
- [ 1  0 -2  0  0  0]
+ [ 0 12  0 -1  0 -1]
  [ 0 22  0  0 -2  0]
- [ 0 12  0 -1  0 -1]]
+ [ 1  0  0  0  0 -2]
+ [ 1  0 -2  0  0  0]]
 Nullity = 1. Kernel basis:
 	[2, 5/24, 1, 3/2, 55/24, 1]
-1 solution:
+Solutions (1):
 	48 KNO3 + 5 C12H22O11 -> 24 N2 + 36 CO2 + 55 H2O + 24 K2CO3
 ```
 
@@ -51,15 +51,15 @@ Molecules (L):
 Molecules (R):
 	Al2(SO4)3: {'Al': 2, 'S': 3, 'O': 12}
 	H2O: {'H': 2, 'O': 1}
-4 distinct elements: ['Al', 'S', 'H', 'O']
+Distinct elements (4): ['Al', 'O', 'H', 'S']
 Linear system of equations matrix:
 [[  1   0  -2   0]
- [  0   1  -3   0]
+ [  3   4 -12  -1]
  [  3   2   0  -2]
- [  3   4 -12  -1]]
+ [  0   1  -3   0]]
 Nullity = 1. Kernel basis:
 	[1/3, 1/2, 1/6, 1]
-1 solution:
+Solutions (1):
 	2 Al(OH)3 + 3 H2SO4 -> Al2(SO4)3 + 6 H2O
 ```
 
@@ -73,7 +73,7 @@ Molecules (R):
 	H: {'H': 1}
 	P: {'P': 1}
 	O2: {'O': 2}
-3 distinct elements: ['O', 'H', 'P']
+Distinct elements (3): ['O', 'H', 'P']
 Linear system of equations matrix:
 [[ 0  0  1  0  0 -2]
  [ 1  0  0 -1  0  0]
@@ -82,7 +82,7 @@ Nullity = 3. Kernel basis:
 	[1, 0, 0, 1, 0, 0]
 	[0, 1, 0, 0, 1, 0]
 	[0, 0, 2, 0, 0, 1]
-3 solutions:
+Solutions (3):
 	H + 0 P + 0 O -> H + 0 P + 0 O2
 	0 H + P + 0 O -> 0 H + P + 0 O2
 	0 H + 0 P + 2 O -> 0 H + 0 P + O2
@@ -94,7 +94,7 @@ Molecules (L):
 	C: {'C': 1}
 Molecules (R):
 	Ne: {'Ne': 1}
-2 distinct elements: ['Ne', 'C']
+Distinct elements (2): ['Ne', 'C']
 Linear system of equations matrix:
 [[ 0 -1]
  [ 1  0]]
