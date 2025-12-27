@@ -1,12 +1,12 @@
 """
 Chemical reaction balance solver.
 
-Copyright 2022. Andrew Wang.
+Copyright 2026. Andrew Wang.
 """
 from typing import DefaultDict, Iterable, List, Tuple
 from itertools import chain
 import numpy as np
-from sympy import Matrix, Rational
+from sympy import Matrix, Rational  # type: ignore
 
 
 def __distinct_elems(mols: List[DefaultDict[str, int]]) -> List[str]:
@@ -16,6 +16,7 @@ def __distinct_elems(mols: List[DefaultDict[str, int]]) -> List[str]:
         for key in mol:
             elems.add(key)
     return list(elems)
+
 
 def __scale_to_integers(rationals: List[Rational]) -> np.ndarray:
     """Scale a list of rationals to integers."""
@@ -27,6 +28,7 @@ def __scale_to_integers(rationals: List[Rational]) -> np.ndarray:
     coefs /= np.gcd.reduce(coefs)
     return coefs
 
+
 def balance(left: List[DefaultDict[str, int]],
             right: List[DefaultDict[str, int]],
             verbose: bool) \
@@ -34,7 +36,7 @@ def balance(left: List[DefaultDict[str, int]],
     """Balance the parsed left and ride sides."""
     elems = __distinct_elems(left + right)
     if verbose:
-        print(f'{len(elems)} distinct element{"" if len(elems) == 1 else "s"}:', elems)
+        print(f'Distinct elements ({len(elems)}):', elems)
     lin_sys = np.zeros((len(elems), len(left) + len(right)), dtype=int)
     for idx_elem, elem in enumerate(elems):
         for idx_mol, mol in enumerate(chain(left, right)):
@@ -45,7 +47,8 @@ def balance(left: List[DefaultDict[str, int]],
     nullspace: List[Matrix] = Matrix(lin_sys).nullspace(simplify=True)
     assert all(null_basis.shape[1] == 1 for null_basis in nullspace), \
         'Kernel basis should consist of column vectors.'
-    kernel: List[List[Rational]] = [null_basis.flat() for null_basis in nullspace]
+    kernel: List[List[Rational]] = [null_basis.flat()
+                                    for null_basis in nullspace]
     if verbose:
         print(f'Nullity = {len(kernel)}. Kernel basis:')
         for ker in kernel:

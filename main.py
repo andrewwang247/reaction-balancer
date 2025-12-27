@@ -1,7 +1,7 @@
 """
 Balance user-provided chemical reactions.
 
-Copyright 2022. Andrew Wang.
+Copyright 2026. Andrew Wang.
 """
 from typing import Tuple
 from click import command, option
@@ -41,7 +41,7 @@ def main(left: Tuple[str, ...], right: Tuple[str, ...], verbose: bool):
     if len(solutions) == 0:
         print('No solutions found.')
     else:
-        print(f'{len(solutions)} solution{"" if len(solutions) == 1 else "s"}:')
+        print(f'Solutions ({len(solutions)}):')
     for left_coef, right_coef in solutions:
         left_disp = display_solution(left_coef, left)
         right_disp = display_solution(right_coef, right)
