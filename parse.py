@@ -23,7 +23,7 @@ def __find_close_paren(mol: str, start_idx: int) -> int:
         if stack_count == 0:
             return idx
     raise ValueError(
-        f'Could not closing paren for {mol} at index {start_idx}.')
+        f'Could not find closing paren for {mol} at index {start_idx}.')
 
 
 def parse(mol: str) -> DefaultDict[str, int]:

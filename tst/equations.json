@@ -1,0 +1,1448 @@
+[
+  {
+    "left_mols": [
+      "FeCl3",
+      "MgO"
+    ],
+    "right_mols": [
+      "Fe2O3",
+      "MgCl2"
+    ],
+    "left_coefs": [
+      2,
+      3
+    ],
+    "right_coefs": [
+      1,
+      3
+    ]
+  },
+  {
+    "left_mols": [
+      "Li",
+      "H3PO4"
+    ],
+    "right_mols": [
+      "H2",
+      "Li3PO4"
+    ],
+    "left_coefs": [
+      6,
+      2
+    ],
+    "right_coefs": [
+      3,
+      2
+    ]
+  },
+  {
+    "left_mols": [
+      "ZnS",
+      "O2"
+    ],
+    "right_mols": [
+      "ZnO",
+      "SO2"
+    ],
+    "left_coefs": [
+      2,
+      3
+    ],
+    "right_coefs": [
+      2,
+      2
+    ]
+  },
+  {
+    "left_mols": [
+      "FeS2",
+      "Cl2"
+    ],
+    "right_mols": [
+      "FeCl3",
+      "S2Cl2"
+    ],
+    "left_coefs": [
+      2,
+      5
+    ],
+    "right_coefs": [
+      2,
+      2
+    ]
+  },
+  {
+    "left_mols": [
+      "Fe",
+      "HC2H3O2"
+    ],
+    "right_mols": [
+      "Fe(C2H3O2)3",
+      "H2"
+    ],
+    "left_coefs": [
+      2,
+      6
+    ],
+    "right_coefs": [
+      2,
+      3
+    ]
+  },
+  {
+    "left_mols": [
+      "H2",
+      "V2O5"
+    ],
+    "right_mols": [
+      "V2O3",
+      "H2O"
+    ],
+    "left_coefs": [
+      2,
+      1
+    ],
+    "right_coefs": [
+      1,
+      2
+    ]
+  },
+  {
+    "left_mols": [
+      "HCl",
+      "MnO2"
+    ],
+    "right_mols": [
+      "MnCl2",
+      "Cl2",
+      "H2O"
+    ],
+    "left_coefs": [
+      4,
+      1
+    ],
+    "right_coefs": [
+      1,
+      1,
+      2
+    ]
+  },
+  {
+    "left_mols": [
+      "Fe2O3",
+      "C"
+    ],
+    "right_mols": [
+      "Fe",
+      "CO2"
+    ],
+    "left_coefs": [
+      2,
+      3
+    ],
+    "right_coefs": [
+      4,
+      3
+    ]
+  },
+  {
+    "left_mols": [
+      "C5H11NH2",
+      "O2"
+    ],
+    "right_mols": [
+      "CO2",
+      "H2O",
+      "NO2"
+    ],
+    "left_coefs": [
+      4,
+      37
+    ],
+    "right_coefs": [
+      20,
+      26,
+      4
+    ]
+  },
+  {
+    "left_mols": [
+      "CO2",
+      "S8"
+    ],
+    "right_mols": [
+      "CS2",
+      "SO2"
+    ],
+    "left_coefs": [
+      8,
+      3
+    ],
+    "right_coefs": [
+      8,
+      8
+    ]
+  },
+  {
+    "left_mols": [
+      "P4",
+      "O2"
+    ],
+    "right_mols": [
+      "P2O3"
+    ],
+    "left_coefs": [
+      1,
+      3
+    ],
+    "right_coefs": [
+      2
+    ]
+  },
+  {
+    "left_mols": [
+      "NH3",
+      "N2O"
+    ],
+    "right_mols": [
+      "N2",
+      "H2O"
+    ],
+    "left_coefs": [
+      2,
+      3
+    ],
+    "right_coefs": [
+      4,
+      3
+    ]
+  },
+  {
+    "left_mols": [
+      "NH3",
+      "O2"
+    ],
+    "right_mols": [
+      "NO",
+      "H2O"
+    ],
+    "left_coefs": [
+      4,
+      5
+    ],
+    "right_coefs": [
+      4,
+      6
+    ]
+  },
+  {
+    "left_mols": [
+      "NH3",
+      "Cl2"
+    ],
+    "right_mols": [
+      "N2H4",
+      "NH4Cl"
+    ],
+    "left_coefs": [
+      4,
+      1
+    ],
+    "right_coefs": [
+      1,
+      2
+    ]
+  },
+  {
+    "left_mols": [
+      "NH3",
+      "F2"
+    ],
+    "right_mols": [
+      "N2F4",
+      "HF"
+    ],
+    "left_coefs": [
+      2,
+      5
+    ],
+    "right_coefs": [
+      1,
+      6
+    ]
+  },
+  {
+    "left_mols": [
+      "NH3",
+      "F2"
+    ],
+    "right_mols": [
+      "NH4F",
+      "NF3"
+    ],
+    "left_coefs": [
+      4,
+      3
+    ],
+    "right_coefs": [
+      3,
+      1
+    ]
+  },
+  {
+    "left_mols": [
+      "NH4NO3"
+    ],
+    "right_mols": [
+      "N2",
+      "O2",
+      "H2O"
+    ],
+    "left_coefs": [
+      2
+    ],
+    "right_coefs": [
+      2,
+      1,
+      4
+    ]
+  },
+  {
+    "left_mols": [
+      "N2O",
+      "CH4"
+    ],
+    "right_mols": [
+      "N2",
+      "CO2",
+      "H2O"
+    ],
+    "left_coefs": [
+      4,
+      1
+    ],
+    "right_coefs": [
+      4,
+      1,
+      2
+    ]
+  },
+  {
+    "left_mols": [
+      "NO2",
+      "O2",
+      "H2O"
+    ],
+    "right_mols": [
+      "HNO3"
+    ],
+    "left_coefs": [
+      4,
+      1,
+      2
+    ],
+    "right_coefs": [
+      4
+    ]
+  },
+  {
+    "left_mols": [
+      "NO2",
+      "H2O"
+    ],
+    "right_mols": [
+      "HNO3",
+      "NO"
+    ],
+    "left_coefs": [
+      3,
+      1
+    ],
+    "right_coefs": [
+      2,
+      1
+    ]
+  },
+  {
+    "left_mols": [
+      "N2",
+      "O2",
+      "H2O"
+    ],
+    "right_mols": [
+      "HNO3"
+    ],
+    "left_coefs": [
+      2,
+      5,
+      2
+    ],
+    "right_coefs": [
+      4
+    ]
+  },
+  {
+    "left_mols": [
+      "N2H4",
+      "N2O4"
+    ],
+    "right_mols": [
+      "N2",
+      "H2O"
+    ],
+    "left_coefs": [
+      2,
+      1
+    ],
+    "right_coefs": [
+      3,
+      4
+    ]
+  },
+  {
+    "left_mols": [
+      "N2H4",
+      "H2O2"
+    ],
+    "right_mols": [
+      "N2",
+      "H2O"
+    ],
+    "left_coefs": [
+      1,
+      2
+    ],
+    "right_coefs": [
+      1,
+      4
+    ]
+  },
+  {
+    "left_mols": [
+      "N2O4",
+      "H2O"
+    ],
+    "right_mols": [
+      "HNO3",
+      "NO"
+    ],
+    "left_coefs": [
+      3,
+      2
+    ],
+    "right_coefs": [
+      4,
+      2
+    ]
+  },
+  {
+    "left_mols": [
+      "NaOH",
+      "Al"
+    ],
+    "right_mols": [
+      "Al2O3",
+      "H2",
+      "Na2O"
+    ],
+    "left_coefs": [
+      6,
+      2
+    ],
+    "right_coefs": [
+      1,
+      3,
+      3
+    ]
+  },
+  {
+    "left_mols": [
+      "KMnO4"
+    ],
+    "right_mols": [
+      "K2O",
+      "MnO",
+      "O2"
+    ],
+    "left_coefs": [
+      4
+    ],
+    "right_coefs": [
+      2,
+      4,
+      5
+    ]
+  },
+  {
+    "left_mols": [
+      "CaF2(Ca3(PO4)2)3",
+      "H2SO4",
+      "H2O"
+    ],
+    "right_mols": [
+      "H3PO4",
+      "HF",
+      "CaSO4(H2O)2"
+    ],
+    "left_coefs": [
+      1,
+      10,
+      20
+    ],
+    "right_coefs": [
+      6,
+      2,
+      10
+    ]
+  },
+  {
+    "left_mols": [
+      "Ca(AlO2)2",
+      "HCl "
+    ],
+    "right_mols": [
+      "AlCl3",
+      "CaCl2",
+      "H2O"
+    ],
+    "left_coefs": [
+      1,
+      8
+    ],
+    "right_coefs": [
+      2,
+      1,
+      4
+    ]
+  },
+  {
+    "left_mols": [
+      "C6H6",
+      "H2O2"
+    ],
+    "right_mols": [
+      "CO2",
+      "H2O"
+    ],
+    "left_coefs": [
+      1,
+      15
+    ],
+    "right_coefs": [
+      6,
+      18
+    ]
+  },
+  {
+    "left_mols": [
+      "Fe",
+      "O2",
+      "H2O"
+    ],
+    "right_mols": [
+      "Fe(OH)2"
+    ],
+    "left_coefs": [
+      2,
+      1,
+      2
+    ],
+    "right_coefs": [
+      2
+    ]
+  },
+  {
+    "left_mols": [
+      "MgNH4PO4"
+    ],
+    "right_mols": [
+      "Mg2P2O7",
+      "NH3",
+      "H2O"
+    ],
+    "left_coefs": [
+      2
+    ],
+    "right_coefs": [
+      1,
+      2,
+      1
+    ]
+  },
+  {
+    "left_mols": [
+      "AlCl3",
+      "Ca3N2"
+    ],
+    "right_mols": [
+      "AlN",
+      "CaCl2"
+    ],
+    "left_coefs": [
+      2,
+      1
+    ],
+    "right_coefs": [
+      2,
+      3
+    ]
+  },
+  {
+    "left_mols": [
+      "HNCO"
+    ],
+    "right_mols": [
+      "C3N3(NH2)3",
+      "CO2"
+    ],
+    "left_coefs": [
+      6
+    ],
+    "right_coefs": [
+      1,
+      3
+    ]
+  },
+  {
+    "left_mols": [
+      "CdS",
+      "O2"
+    ],
+    "right_mols": [
+      "Cd",
+      "SO2"
+    ],
+    "left_coefs": [
+      1,
+      1
+    ],
+    "right_coefs": [
+      1,
+      1
+    ]
+  },
+  {
+    "left_mols": [
+      "KAlSi3O8",
+      "CO2",
+      "H2O"
+    ],
+    "right_mols": [
+      "Al2Si2O5(OH)4",
+      "H4SiO4",
+      "KHCO3"
+    ],
+    "left_coefs": [
+      2,
+      2,
+      11
+    ],
+    "right_coefs": [
+      1,
+      4,
+      2
+    ]
+  },
+  {
+    "left_mols": [
+      "CH3CCl3",
+      "O2"
+    ],
+    "right_mols": [
+      "CO2",
+      "H2O",
+      "Cl2"
+    ],
+    "left_coefs": [
+      4,
+      11
+    ],
+    "right_coefs": [
+      8,
+      6,
+      6
+    ]
+  },
+  {
+    "left_mols": [
+      "CO",
+      "Fe3O4"
+    ],
+    "right_mols": [
+      "CO2",
+      "Fe"
+    ],
+    "left_coefs": [
+      4,
+      1
+    ],
+    "right_coefs": [
+      4,
+      3
+    ]
+  },
+  {
+    "left_mols": [
+      "H2S",
+      "CO"
+    ],
+    "right_mols": [
+      "CH3COOH",
+      "S8"
+    ],
+    "left_coefs": [
+      8,
+      8
+    ],
+    "right_coefs": [
+      4,
+      1
+    ]
+  },
+  {
+    "left_mols": [
+      "H2S",
+      "SO2"
+    ],
+    "right_mols": [
+      "S8",
+      "H2O"
+    ],
+    "left_coefs": [
+      16,
+      8
+    ],
+    "right_coefs": [
+      3,
+      16
+    ]
+  },
+  {
+    "left_mols": [
+      "FeSO4"
+    ],
+    "right_mols": [
+      "Fe2O3",
+      "SO2",
+      "SO3"
+    ],
+    "left_coefs": [
+      2
+    ],
+    "right_coefs": [
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "left_mols": [
+      "Pb(NO3)2",
+      "FeCl3"
+    ],
+    "right_mols": [
+      "Fe(NO3)3",
+      "PbCl2"
+    ],
+    "left_coefs": [
+      3,
+      2
+    ],
+    "right_coefs": [
+      2,
+      3
+    ]
+  },
+  {
+    "left_mols": [
+      "C3H5(NO3)3"
+    ],
+    "right_mols": [
+      "CO2",
+      "H2O",
+      "N2",
+      "O2"
+    ],
+    "left_coefs": [
+      4
+    ],
+    "right_coefs": [
+      12,
+      10,
+      6,
+      1
+    ]
+  },
+  {
+    "left_mols": [
+      "CO(NH2)2",
+      "NO2"
+    ],
+    "right_mols": [
+      "CO2",
+      "H2O",
+      "N2"
+    ],
+    "left_coefs": [
+      4,
+      6
+    ],
+    "right_coefs": [
+      4,
+      8,
+      7
+    ]
+  },
+  {
+    "left_mols": [
+      "C2H2",
+      "O2"
+    ],
+    "right_mols": [
+      "CO2",
+      "H2O"
+    ],
+    "left_coefs": [
+      2,
+      5
+    ],
+    "right_coefs": [
+      4,
+      2
+    ]
+  },
+  {
+    "left_mols": [
+      "Ag2O",
+      "NH4OH",
+      "NH4NO3"
+    ],
+    "right_mols": [
+      "(Ag(NH3)2)NO3",
+      "H2O"
+    ],
+    "left_coefs": [
+      1,
+      2,
+      2
+    ],
+    "right_coefs": [
+      2,
+      3
+    ]
+  },
+  {
+    "left_mols": [
+      "HClO4",
+      "P4O10"
+    ],
+    "right_mols": [
+      "H3PO4",
+      "Cl2O7"
+    ],
+    "left_coefs": [
+      12,
+      1
+    ],
+    "right_coefs": [
+      4,
+      6
+    ]
+  },
+  {
+    "left_mols": [
+      "C4H10S",
+      "O2"
+    ],
+    "right_mols": [
+      "CO2",
+      "H2O",
+      "SO2"
+    ],
+    "left_coefs": [
+      2,
+      15
+    ],
+    "right_coefs": [
+      8,
+      10,
+      2
+    ]
+  },
+  {
+    "left_mols": [
+      "NaBH4",
+      "BF3"
+    ],
+    "right_mols": [
+      "NaBF4",
+      "B2H6"
+    ],
+    "left_coefs": [
+      3,
+      4
+    ],
+    "right_coefs": [
+      3,
+      2
+    ]
+  },
+  {
+    "left_mols": [
+      "C5H7O",
+      "O2"
+    ],
+    "right_mols": [
+      "CO2",
+      "H2O"
+    ],
+    "left_coefs": [
+      4,
+      25
+    ],
+    "right_coefs": [
+      20,
+      14
+    ]
+  },
+  {
+    "left_mols": [
+      "NaOH",
+      "P4",
+      "H2O"
+    ],
+    "right_mols": [
+      "NaH2PO2",
+      "PH3"
+    ],
+    "left_coefs": [
+      3,
+      1,
+      3
+    ],
+    "right_coefs": [
+      3,
+      1
+    ]
+  },
+  {
+    "left_mols": [
+      "NBr3",
+      "NaOH"
+    ],
+    "right_mols": [
+      "N2",
+      "NaBr",
+      "HOBr"
+    ],
+    "left_coefs": [
+      2,
+      3
+    ],
+    "right_coefs": [
+      1,
+      3,
+      3
+    ]
+  },
+  {
+    "left_mols": [
+      "VO",
+      "Fe2O3"
+    ],
+    "right_mols": [
+      "FeO",
+      "V2O5"
+    ],
+    "left_coefs": [
+      2,
+      3
+    ],
+    "right_coefs": [
+      6,
+      1
+    ]
+  },
+  {
+    "left_mols": [
+      "Fe2O3",
+      "CO"
+    ],
+    "right_mols": [
+      "Fe",
+      "CO2"
+    ],
+    "left_coefs": [
+      1,
+      3
+    ],
+    "right_coefs": [
+      2,
+      3
+    ]
+  },
+  {
+    "left_mols": [
+      "S2H5",
+      "O2"
+    ],
+    "right_mols": [
+      "SO2",
+      "H2O"
+    ],
+    "left_coefs": [
+      4,
+      13
+    ],
+    "right_coefs": [
+      8,
+      10
+    ]
+  },
+  {
+    "left_mols": [
+      "KOH",
+      "F2"
+    ],
+    "right_mols": [
+      "KF",
+      "F2O",
+      "H2O"
+    ],
+    "left_coefs": [
+      2,
+      2
+    ],
+    "right_coefs": [
+      2,
+      1,
+      1
+    ]
+  },
+  {
+    "left_mols": [
+      "Al",
+      "KOH",
+      "H2SO4",
+      "H2O"
+    ],
+    "right_mols": [
+      "KAl(SO4)2(H2O)12",
+      "H2"
+    ],
+    "left_coefs": [
+      2,
+      2,
+      4,
+      22
+    ],
+    "right_coefs": [
+      2,
+      3
+    ]
+  },
+  {
+    "left_mols": [
+      "KAl(SO4)2(H2O)12",
+      "BaCl2"
+    ],
+    "right_mols": [
+      "KCl",
+      "AlCl3",
+      "BaSO4",
+      "H2O"
+    ],
+    "left_coefs": [
+      1,
+      2
+    ],
+    "right_coefs": [
+      1,
+      1,
+      2,
+      12
+    ]
+  },
+  {
+    "left_mols": [
+      "C10H22"
+    ],
+    "right_mols": [
+      "C4H10",
+      "C2H4"
+    ],
+    "left_coefs": [
+      1
+    ],
+    "right_coefs": [
+      1,
+      3
+    ]
+  },
+  {
+    "left_mols": [
+      "NH2CH2COOH",
+      "O2"
+    ],
+    "right_mols": [
+      "CO2",
+      "H2O",
+      "N2"
+    ],
+    "left_coefs": [
+      4,
+      9
+    ],
+    "right_coefs": [
+      8,
+      10,
+      2
+    ]
+  },
+  {
+    "left_mols": [
+      "C3H5O9N3"
+    ],
+    "right_mols": [
+      "CO2",
+      "N2",
+      "O2",
+      "H2O"
+    ],
+    "left_coefs": [
+      4
+    ],
+    "right_coefs": [
+      12,
+      6,
+      1,
+      10
+    ]
+  },
+  {
+    "left_mols": [
+      "C20H45",
+      "O2"
+    ],
+    "right_mols": [
+      "CO2",
+      "H2O"
+    ],
+    "left_coefs": [
+      4,
+      125
+    ],
+    "right_coefs": [
+      80,
+      90
+    ]
+  },
+  {
+    "left_mols": [
+      "C3H5",
+      "O2"
+    ],
+    "right_mols": [
+      "CO2",
+      "H2O"
+    ],
+    "left_coefs": [
+      4,
+      17
+    ],
+    "right_coefs": [
+      12,
+      10
+    ]
+  },
+  {
+    "left_mols": [
+      "C5H11SO2N",
+      "O2"
+    ],
+    "right_mols": [
+      "CO2",
+      "H2O",
+      "SO2",
+      "NO2"
+    ],
+    "left_coefs": [
+      4,
+      35
+    ],
+    "right_coefs": [
+      20,
+      22,
+      4,
+      4
+    ]
+  },
+  {
+    "left_mols": [
+      "Ca(OH)2",
+      "C4H6O5"
+    ],
+    "right_mols": [
+      "H2O",
+      "CaC4H4O5"
+    ],
+    "left_coefs": [
+      1,
+      1
+    ],
+    "right_coefs": [
+      2,
+      1
+    ]
+  },
+  {
+    "left_mols": [
+      "FeTiO3",
+      "Cl2",
+      "C"
+    ],
+    "right_mols": [
+      "TiCl4",
+      "FeCl3",
+      "CO"
+    ],
+    "left_coefs": [
+      2,
+      7,
+      6
+    ],
+    "right_coefs": [
+      2,
+      2,
+      6
+    ]
+  },
+  {
+    "left_mols": [
+      "Ca3P2",
+      "H2O"
+    ],
+    "right_mols": [
+      "Ca(OH)2",
+      "PH3"
+    ],
+    "left_coefs": [
+      1,
+      6
+    ],
+    "right_coefs": [
+      3,
+      2
+    ]
+  },
+  {
+    "left_mols": [
+      "TiCl4",
+      "H2O"
+    ],
+    "right_mols": [
+      "TiO2",
+      "HCl"
+    ],
+    "left_coefs": [
+      1,
+      2
+    ],
+    "right_coefs": [
+      1,
+      4
+    ]
+  },
+  {
+    "left_mols": [
+      "Cu2O",
+      "O2"
+    ],
+    "right_mols": [
+      "CuO"
+    ],
+    "left_coefs": [
+      2,
+      1
+    ],
+    "right_coefs": [
+      4
+    ]
+  },
+  {
+    "left_mols": [
+      "FeSO4(NH4)2SO4(H2O)6",
+      "H2C2O4(H2O)2"
+    ],
+    "right_mols": [
+      "FeC2O4(H2O)2",
+      "NH4HSO4",
+      "H2O"
+    ],
+    "left_coefs": [
+      1,
+      1
+    ],
+    "right_coefs": [
+      1,
+      2,
+      6
+    ]
+  },
+  {
+    "left_mols": [
+      "BCl3",
+      "P4",
+      "H2"
+    ],
+    "right_mols": [
+      "BP",
+      "HCl"
+    ],
+    "left_coefs": [
+      4,
+      1,
+      6
+    ],
+    "right_coefs": [
+      4,
+      12
+    ]
+  },
+  {
+    "left_mols": [
+      "NH3",
+      "KAl(SO4)2(H2O)12"
+    ],
+    "right_mols": [
+      "Al(OH)3",
+      "(NH4)2SO4",
+      "KOH",
+      "H2O"
+    ],
+    "left_coefs": [
+      4,
+      1
+    ],
+    "right_coefs": [
+      1,
+      2,
+      1,
+      8
+    ]
+  },
+  {
+    "left_mols": [
+      "FeS2",
+      "O2"
+    ],
+    "right_mols": [
+      "Fe2O3",
+      "SO2"
+    ],
+    "left_coefs": [
+      4,
+      11
+    ],
+    "right_coefs": [
+      2,
+      8
+    ]
+  },
+  {
+    "left_mols": [
+      "C11H12N2O2",
+      "O2"
+    ],
+    "right_mols": [
+      "CO2",
+      "H2O",
+      "N2"
+    ],
+    "left_coefs": [
+      1,
+      13
+    ],
+    "right_coefs": [
+      11,
+      6,
+      1
+    ]
+  },
+  {
+    "left_mols": [
+      "FeCl3(H2O)6",
+      "K2C2O4(H2O)"
+    ],
+    "right_mols": [
+      "K7(Fe(C2O4)5(H2O)4)",
+      "KCl",
+      "H2O"
+    ],
+    "left_coefs": [
+      1,
+      5
+    ],
+    "right_coefs": [
+      1,
+      3,
+      7
+    ]
+  },
+  {
+    "left_mols": [
+      "Mg(NO3)2"
+    ],
+    "right_mols": [
+      "MgO",
+      "NO2",
+      "O2"
+    ],
+    "left_coefs": [
+      2
+    ],
+    "right_coefs": [
+      2,
+      4,
+      1
+    ]
+  },
+  {
+    "left_mols": [
+      "VF5",
+      "HI"
+    ],
+    "right_mols": [
+      "V2I10",
+      "HF"
+    ],
+    "left_coefs": [
+      2,
+      10
+    ],
+    "right_coefs": [
+      1,
+      10
+    ]
+  },
+  {
+    "left_mols": [
+      "Na2CO3",
+      "C",
+      "N2"
+    ],
+    "right_mols": [
+      "NaCN",
+      "CO2"
+    ],
+    "left_coefs": [
+      2,
+      5,
+      2
+    ],
+    "right_coefs": [
+      4,
+      3
+    ]
+  }
+]

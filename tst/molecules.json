@@ -1,0 +1,188 @@
+[
+  {
+    "molecule": "I",
+    "elements": {
+      "I": 1
+    }
+  },
+  {
+    "molecule": "Os",
+    "elements": {
+      "Os": 1
+    }
+  },
+  {
+    "molecule": "N3",
+    "elements": {
+      "N": 3
+    }
+  },
+  {
+    "molecule": "Cl2",
+    "elements": {
+      "Cl": 2
+    }
+  },
+  {
+    "molecule": "KCl",
+    "elements": {
+      "K": 1,
+      "Cl": 1
+    }
+  },
+  {
+    "molecule": "NO",
+    "elements": {
+      "N": 1,
+      "O": 1
+    }
+  },
+  {
+    "molecule": "Na2SO4",
+    "elements": {
+      "Na": 2,
+      "S": 1,
+      "O": 4
+    }
+  },
+  {
+    "molecule": "Na2SO4",
+    "elements": {
+      "Na": 2,
+      "S": 1,
+      "O": 4
+    }
+  },
+  {
+    "molecule": "NaHCO3",
+    "elements": {
+      "Na": 1,
+      "H": 1,
+      "C": 1,
+      "O": 3
+    }
+  },
+  {
+    "molecule": "C6H12O6",
+    "elements": {
+      "C": 6,
+      "H": 12,
+      "O": 6
+    }
+  },
+  {
+    "molecule": "MoSi2",
+    "elements": {
+      "Mo": 1,
+      "Si": 2
+    }
+  },
+  {
+    "molecule": "PtCl2(NH3)2",
+    "elements": {
+      "Pt": 1,
+      "Cl": 2,
+      "N": 2,
+      "H": 6
+    }
+  },
+  {
+    "molecule": "Fe2(SO4)3",
+    "elements": {
+      "Fe": 2,
+      "S": 3,
+      "O": 12
+    }
+  },
+  {
+    "molecule": "Fe(H2O)4(OH)2",
+    "elements": {
+      "Fe": 1,
+      "H": 10,
+      "O": 6
+    }
+  },
+  {
+    "molecule": "(Li3)(NaO2)",
+    "elements": {
+      "Li": 3,
+      "Na": 1,
+      "O": 2
+    }
+  },
+  {
+    "molecule": "(CH3)(CH2)2",
+    "elements": {
+      "C": 3,
+      "H": 7
+    }
+  },
+  {
+    "molecule": "KFe3AlSi3O10(OH)2",
+    "elements": {
+      "K": 1,
+      "Fe": 3,
+      "Al": 1,
+      "Si": 3,
+      "O": 12,
+      "H": 2
+    }
+  },
+  {
+    "molecule": "Ca3(PO4)2Hg(NH3)",
+    "elements": {
+      "Ca": 3,
+      "P": 2,
+      "O": 8,
+      "Hg": 1,
+      "N": 1,
+      "H": 3
+    }
+  },
+  {
+    "molecule": "TiCl2((CH3)2PCH2CH2P(CH3)2)2",
+    "elements": {
+      "Ti": 1,
+      "Cl": 2,
+      "C": 12,
+      "P": 4,
+      "H": 32
+    }
+  },
+  {
+    "molecule": "NaRb5(PuO4(OH)2)2",
+    "elements": {
+      "Na": 1,
+      "Rb": 5,
+      "Pu": 2,
+      "O": 12,
+      "H": 4
+    }
+  },
+  {
+    "molecule": "(PuO4(OH)2)NaM2",
+    "elements": {
+      "Pu": 1,
+      "O": 6,
+      "H": 2,
+      "Na": 1,
+      "M": 2
+    }
+  },
+  {
+    "molecule": "CH2(CH2CH(C6H5))2CH2",
+    "elements": {
+      "C": 18,
+      "H": 20
+    }
+  },
+  {
+    "molecule": "K3(Fe(CN)6)",
+    "elements": {
+      "K": 3,
+      "Fe": 1,
+      "C": 6,
+      "N": 6
+    }
+  }
+]
