@@ -33,6 +33,8 @@ def test_paren():
     check('Fe(H2O)4(OH)2', {'Fe': 1, 'H': 10, 'O': 6})
     check('(Li3)(NaO2)', {'Li': 3, 'Na': 1, 'O': 2})
     check('(CH3)(CH2)2', {'C': 3, 'H': 7})
+    check('KFe3AlSi3O10(OH)2', {
+        'K': 1, 'Fe': 3, 'Al': 1, 'Si': 3, 'O': 12, 'H': 2})
     check('Ca3(PO4)2Hg(NH3)', {'Ca': 3, 'P': 2,
           'O': 8, 'Hg': 1, 'N': 1, 'H': 3})
 
