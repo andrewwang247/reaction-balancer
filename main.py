@@ -3,6 +3,7 @@ Balance user-provided chemical reactions.
 
 Copyright 2026. Andrew Wang.
 """
+import logging
 from typing import Tuple
 from click import command, option
 from numpy import ndarray
@@ -27,7 +28,8 @@ def display_solution(coefs: ndarray, mols: Tuple[str, ...]) -> str:
         help='Set verbosity of solving process.')
 def main(left: Tuple[str, ...], right: Tuple[str, ...], verbose: bool):
     """Balance user-provided chemical reactions."""
-    solutions = list(solve(left, right, verbose))
+    logging.basicConfig(level=logging.INFO if verbose else logging.WARN)
+    solutions = list(solve(left, right))
     if len(solutions) == 0:
         print('No solutions found.')
     else:
