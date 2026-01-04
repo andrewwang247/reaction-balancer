@@ -27,7 +27,7 @@ def test_balance(equation: Dict[str, Union[List[str], List[int]]]):
     right_coefs_expected = equation['right_coefs']
     assert all(isinstance(coef, int) for coef in left_coefs_expected)
     assert all(isinstance(coef, int) for coef in right_coefs_expected)
-    solutions = list(solve(left_mols, right_mols, False))  # type:  ignore
+    solutions = list(solve(left_mols, right_mols))  # type:  ignore
     assert len(solutions) == 1, 'Solution should be unique.'
     left_coefs_actual, right_coefs_actual = solutions[0]
     assert left_coefs_actual.tolist() == left_coefs_expected
