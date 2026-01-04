@@ -13,7 +13,7 @@ from parse import parse
 logger = logging.getLogger(__name__)
 
 
-def __distinct_elems(mols: List[DefaultDict[str, int]]) -> List[str]:
+def _distinct_elems(mols: List[DefaultDict[str, int]]) -> List[str]:
     """Get the distinct elements that form the molecules."""
     elems = set()
     for mol in mols:
@@ -23,7 +23,7 @@ def __distinct_elems(mols: List[DefaultDict[str, int]]) -> List[str]:
     return list(elems)
 
 
-def __scale_to_integers(rationals: List[Rational]) -> np.ndarray:
+def _scale_to_integers(rationals: List[Rational]) -> np.ndarray:
     """Scale a list of rationals to integers."""
     rational_rep = [num.as_numer_denom() for num in rationals]
     numers = np.array([rat[0] for rat in rational_rep])
@@ -38,7 +38,7 @@ def balance(left: List[DefaultDict[str, int]],
             right: List[DefaultDict[str, int]]) \
         -> Iterable[Tuple[np.ndarray, np.ndarray]]:
     """Balance the parsed left and ride sides."""
-    elems = __distinct_elems(left + right)
+    elems = _distinct_elems(left + right)
 
     lin_sys = np.zeros((len(elems), len(left) + len(right)), dtype=int)
     for idx_elem, elem in enumerate(elems):
@@ -55,7 +55,7 @@ def balance(left: List[DefaultDict[str, int]],
 
     logger.info('Nullity = %d', len(kernel))
     for ker in kernel:
-        coefs = __scale_to_integers(ker)
+        coefs = _scale_to_integers(ker)
         logger.info('Kernel basis vector %s scaled to %s', ker, coefs)
         if np.any(coefs < 0) and np.any(coefs > 0):
             continue

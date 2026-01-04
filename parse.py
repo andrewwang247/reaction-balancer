@@ -12,7 +12,7 @@ PATT = re.compile(r'([A-Z][a-z]*)(\d*)')
 SUB_PATT = re.compile(r'\d+')
 
 
-def __find_close_paren(mol: str, start_idx: int) -> int:
+def _find_closing_paren(mol: str, start_idx: int) -> int:
     """Find a closing paren given the starting idx of opening paren."""
     stack_count = 1
     for idx in range(start_idx + 1, len(mol)):
@@ -35,7 +35,7 @@ def parse(mol: str) -> DefaultDict[str, int]:
             elem, sub = match.group(1, 2)
             elements[elem] += int(sub) if sub else 1
     else:
-        right_paren = __find_close_paren(mol, left_paren)
+        right_paren = _find_closing_paren(mol, left_paren)
         paren = parse(mol[left_paren + 1: right_paren])
         sub_match = SUB_PATT.match(mol[right_paren + 1:])
         sub_paren = int(sub_match.group(0)) if sub_match else 1
