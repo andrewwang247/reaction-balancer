@@ -30,5 +30,5 @@ def test_balance(equation: Dict[str, Union[List[str], List[int]]]):
     solutions = list(solve(left_mols, right_mols, False))  # type:  ignore
     assert len(solutions) == 1, 'Solution should be unique.'
     left_coefs_actual, right_coefs_actual = solutions[0]
-    assert all(left_coefs_actual == left_coefs_expected)
-    assert all(right_coefs_actual == right_coefs_expected)
+    assert left_coefs_actual.tolist() == left_coefs_expected
+    assert right_coefs_actual.tolist() == right_coefs_expected
