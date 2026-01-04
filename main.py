@@ -6,8 +6,7 @@ Copyright 2026. Andrew Wang.
 from typing import Tuple
 from click import command, option
 from numpy import ndarray
-from parse import parse
-from balance import balance
+from balance import solve
 # pylint: disable=no-value-for-parameter
 
 
@@ -28,16 +27,7 @@ def display_solution(coefs: ndarray, mols: Tuple[str, ...]) -> str:
         help='Set verbosity of solving process.')
 def main(left: Tuple[str, ...], right: Tuple[str, ...], verbose: bool):
     """Balance user-provided chemical reactions."""
-    left_mols = [parse(mol) for mol in left]
-    right_mols = [parse(mol) for mol in right]
-    if verbose:
-        print('Molecules (L):')
-        for mol, elem_counts in zip(left, left_mols):
-            print(f'\t{mol}:', dict(elem_counts))
-        print('Molecules (R):')
-        for mol, elem_counts in zip(right, right_mols):
-            print(f'\t{mol}:', dict(elem_counts))
-    solutions = list(balance(left_mols, right_mols, verbose))
+    solutions = list(solve(left, right, verbose))
     if len(solutions) == 0:
         print('No solutions found.')
     else:

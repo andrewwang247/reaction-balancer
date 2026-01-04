@@ -102,8 +102,6 @@ Nullity = 0. Kernel basis:
 No solutions found.
 ```
 
-Execute unit tests for parsing with `pytest`.
-
 ## Methodology
 
 For each chemical reaction, the balancer counts the elements in each component. It uses these values to generate a system of linear equations that represent the constraints of a possible solution. Turning the system into a matrix and computing the null space yields solutions for the coefficients of the balanced equation.
@@ -128,3 +126,7 @@ Computing the matrix null space
 ```
 
 Thus, the balanced equation is $CH_4 + 2 \\, O_2 \to CO_2 + 2 \\, H_2 O$.
+
+## Testing
+
+Both parsing and balancing are validated with extensive unit testing. The test cases for parsing and balancing are stored in `tst/molecules.json` and `tst/equations.json`, respectively. Run `pytest` to run the full suite of tests.

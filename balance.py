@@ -7,6 +7,7 @@ from typing import DefaultDict, Iterable, List, Tuple
 from itertools import chain
 import numpy as np
 from sympy import Matrix, Rational  # type: ignore
+from parse import parse
 
 
 def __distinct_elems(mols: List[DefaultDict[str, int]]) -> List[str]:
@@ -59,3 +60,18 @@ def balance(left: List[DefaultDict[str, int]],
             continue
         coefs = np.abs(coefs)
         yield coefs[:len(left)], coefs[len(left):]
+
+
+def solve(left: Iterable[str], right: Iterable[str],
+          verbose: bool) -> Iterable[Tuple[np.ndarray, np.ndarray]]:
+    """Balance left and right sides of chemical equation."""
+    left_mols = [parse(mol) for mol in left]
+    right_mols = [parse(mol) for mol in right]
+    if verbose:
+        print('Molecules (L):')
+        for mol, elem_counts in zip(left, left_mols):
+            print(f'\t{mol}:', dict(elem_counts))
+        print('Molecules (R):')
+        for mol, elem_counts in zip(right, right_mols):
+            print(f'\t{mol}:', dict(elem_counts))
+    return balance(left_mols, right_mols, verbose)
