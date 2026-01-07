@@ -6,12 +6,14 @@ Copyright 2026. Andrew Wang.
 import logging
 from typing import Tuple
 from click import command, option
-from numpy import ndarray
+import numpy as np
+import numpy.typing as npt
 from balance import solve
 # pylint: disable=no-value-for-parameter
 
 
-def display_solution(coefs: ndarray, mols: Tuple[str, ...]) -> str:
+def display_solution(coefs: npt.NDArray[np.int_],
+                     mols: Tuple[str, ...]) -> str:
     """Construct string of coefficients and molecules."""
     multipled = []
     for coef, mol in zip(coefs, mols):
