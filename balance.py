@@ -7,6 +7,7 @@ import logging
 from typing import DefaultDict, Iterable, List, Tuple
 from itertools import chain
 import numpy as np
+import numpy.typing as npt
 from sympy import Matrix, Rational  # type: ignore
 from parse import parse
 
@@ -23,21 +24,24 @@ def _distinct_elems(mols: List[DefaultDict[str, int]]) -> List[str]:
     return list(elems)
 
 
-def _scale_to_integers(rationals: List[Rational]) -> np.ndarray:
+def _scale_to_integers(rationals: List[Rational]) -> npt.NDArray[np.int_]:
     """Scale a list of rationals to integers."""
     rational_rep = [num.as_numer_denom() for num in rationals]
     numers = np.array([rat[0] for rat in rational_rep])
     denoms = np.array([rat[1] for rat in rational_rep])
     lcm = np.lcm.reduce(denoms)
-    coefs = numers * lcm / denoms
+    coefs: npt.NDArray[np.object_] = numers * lcm / denoms
     coefs /= np.gcd.reduce(coefs)
-    return coefs
+    return coefs.astype(int)
 
 
-def balance(left: List[DefaultDict[str, int]],
-            right: List[DefaultDict[str, int]]) \
-        -> Iterable[Tuple[np.ndarray, np.ndarray]]:
-    """Balance the parsed left and ride sides."""
+def solve(lhs: Iterable[str], rhs: Iterable[str]) -> \
+        Iterable[Tuple[npt.NDArray[np.int_], npt.NDArray[np.int_]]]:
+    """Balance left and right sides of chemical equation."""
+    left = [parse(mol) for mol in lhs]
+    right = [parse(mol) for mol in rhs]
+    logger.info('Molecules (L): %s', list(left))
+    logger.info('Molecules (R): %s', list(right))
     elems = _distinct_elems(left + right)
 
     lin_sys = np.zeros((len(elems), len(left) + len(right)), dtype=int)
@@ -61,13 +65,3 @@ def balance(left: List[DefaultDict[str, int]],
             continue
         coefs = np.abs(coefs)
         yield coefs[:len(left)], coefs[len(left):]
-
-
-def solve(left: Iterable[str], right: Iterable[str]
-          ) -> Iterable[Tuple[np.ndarray, np.ndarray]]:
-    """Balance left and right sides of chemical equation."""
-    left_mols = [parse(mol) for mol in left]
-    right_mols = [parse(mol) for mol in right]
-    logger.info('Molecules (L): %s', list(left))
-    logger.info('Molecules (R): %s', list(right))
-    return balance(left_mols, right_mols)
