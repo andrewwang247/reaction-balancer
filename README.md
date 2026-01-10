@@ -16,9 +16,7 @@ Options:
 
 ## Grammar
 
-The custom parser supports standard chemical formulas consisting of elements, subscripts, and nested parentheses.
-
-Some examples:
+The custom parser supports standard chemical formulas consisting of elements, subscripts, and nested parentheses. Some examples:
 
 ```text
 $ python3 main.py -l KNO3 -l C12H22O11 -r N2 -r CO2 -r H2O -r K2CO3 -v
@@ -86,15 +84,28 @@ No solutions found.
 
 ## Methodology
 
-For each chemical reaction, the balancer counts the elements in each component. It uses these values to generate a system of linear equations that represent the constraints of a possible solution. Turning the system into a matrix and computing the null space yields solutions for the coefficients of the balanced equation.
+For each chemical reaction, the balancer counts the elements in each component. It uses these values to generate a system of linear equations that represent the constraints of a possible solution. Turning the system into a matrix and computing the null space yields solutions for the coefficients of the balanced equation. We work through an example for $a \cdot CH_4 + b \cdot O_2 \to c \cdot CO_2 + d \cdot H_2 O$. Each element constrains the coefficients in the form of a linear equation.
 
-We work through an example for $a \cdot CH_4 + b \cdot O_2 \to c \cdot CO_2 + d \cdot H_2 O$.
+- $C$ constraint: $1a + 0b = 1c + 0d$ or $1a + 0b - 1c - 0d = 0$
+- $O$ constraint: $0a + 2b = 2c + 1d$ or $0a + 2b - 2c - 1d = 0$
+- $H$ constraint: $4a + 0b = 0c + 2d$ or $4a + 0b - 0c - 2d = 0$
 
-- $C$ constraint: $1a + 0b = 1c + 0d$
-- $O$ constraint: $0a + 2b = 2c + 1d$
-- $H$ constraint: $4a + 0b = 0c + 2d$
+In matrix form, this system of linear equations is:
 
-Computing the matrix null space
+```math
+\begin{pmatrix}
+1 & 0 & -1 & 0 \\
+0 & 2 & -2 & -1 \\
+4 & 0 & 0 & -2
+\end{pmatrix}
+\begin{pmatrix}
+a \\ b \\ c \\ d
+\end{pmatrix}
+=
+\vec{0}
+```
+
+We compute the null space and represent it as a set of basis vectors with rational components. These vectors are the unique solutions for the chemical coefficients. We rescale such that each component is an integer before presenting the solution.
 
 ```math
 \ker
@@ -104,9 +115,11 @@ Computing the matrix null space
 4 & 0 & 0 & -2
 \end{pmatrix}
 = \text{span}
+\left\{
 \begin{pmatrix}
-1 & 2 & 1 & 2
+1 \\ 2 \\ 1 \\ 2
 \end{pmatrix}
+\right\}
 ```
 
 Thus, the balanced equation is $CH_4 + 2 \\, O_2 \to CO_2 + 2 \\, H_2 O$.
