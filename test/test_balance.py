@@ -6,17 +6,17 @@ Copyright 2026. Andrew Wang.
 from typing import Dict, List, Union
 from json import load
 from pytest import mark
-from balance import solve
+from src import solve
 
 
-def _get_test_eqns(
-        filename: str) -> List[Dict[str, Union[List[str], List[int]]]]:
+def _get_test_equations() -> \
+        List[Dict[str, Union[List[str], List[int]]]]:
     """Parse the test cases JSON."""
-    with open(filename, encoding='UTF-8') as fp:
+    with open('test/equations.json', encoding='UTF-8') as fp:
         return load(fp)
 
 
-@mark.parametrize('equation', _get_test_eqns('tst/equations.json'))
+@mark.parametrize('equation', _get_test_equations())
 def test_balance(equation: Dict[str, Union[List[str], List[int]]]):
     """Assert that the balanced equations are correct."""
     left_mols = equation['left_mols']

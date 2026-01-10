@@ -6,16 +6,16 @@ Copyright 2026. Andrew Wang.
 from typing import Dict, List, Union
 from json import load
 from pytest import mark
-from parse import parse
+from src import parse
 
 
-def _get_test_mols(
-        filename: str) -> List[Dict[str, Union[str, Dict[str, int]]]]:
-    with open(filename, encoding='UTF-8') as fp:
+def _get_test_molecules() \
+        -> List[Dict[str, Union[str, Dict[str, int]]]]:
+    with open('test/molecules.json', encoding='UTF-8') as fp:
         return load(fp)
 
 
-@mark.parametrize('case', _get_test_mols('tst/molecules.json'))
+@mark.parametrize('case', _get_test_molecules())
 def test_parser(case: Dict[str, Union[str, Dict[str, int]]]):
     """Assert that the result of the parser is equivalent to expected."""
     assert isinstance(case['molecule'], str)

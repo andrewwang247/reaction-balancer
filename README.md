@@ -115,15 +115,13 @@ We compute the null space and represent it as a set of basis vectors with ration
 4 & 0 & 0 & -2
 \end{pmatrix}
 = \text{span}
-\left\{
 \begin{pmatrix}
 1 \\ 2 \\ 1 \\ 2
 \end{pmatrix}
-\right\}
 ```
 
 Thus, the balanced equation is $CH_4 + 2 \\, O_2 \to CO_2 + 2 \\, H_2 O$.
 
 ## Testing
 
-Both parsing and balancing are validated with extensive unit testing. The test cases for parsing and balancing are stored in `tst/molecules.json` and `tst/equations.json`, respectively. Run `pytest` to execute the full suite of tests.
+Both parsing and balancing are validated with extensive unit testing. The test cases for parsing and balancing are stored in `test/molecules.json` and `test/equations.json`, respectively. Run `pytest` to execute the full suite of tests.
