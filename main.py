@@ -8,12 +8,12 @@ from typing import Tuple
 from click import command, option
 import numpy as np
 import numpy.typing as npt
-from balance import solve
+from src import solve
 # pylint: disable=no-value-for-parameter
 
 
-def display_solution(coefs: npt.NDArray[np.int_],
-                     mols: Tuple[str, ...]) -> str:
+def _display_solution(coefs: npt.NDArray[np.int_],
+                      mols: Tuple[str, ...]) -> str:
     """Construct string of coefficients and molecules."""
     multipled = []
     for coef, mol in zip(coefs, mols):
@@ -37,8 +37,8 @@ def main(left: Tuple[str, ...], right: Tuple[str, ...], verbose: bool):
     else:
         print(f'Solutions ({len(solutions)}):')
     for left_coef, right_coef in solutions:
-        left_disp = display_solution(left_coef, left)
-        right_disp = display_solution(right_coef, right)
+        left_disp = _display_solution(left_coef, left)
+        right_disp = _display_solution(right_coef, right)
         print(f'\t{left_disp} -> {right_disp}')
 
 

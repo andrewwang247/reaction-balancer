@@ -9,7 +9,7 @@ from itertools import chain
 import numpy as np
 import numpy.typing as npt
 from sympy import Matrix, Rational  # type: ignore
-from parse import parse
+from .parse import parse
 
 logger = logging.getLogger(__name__)
 
