@@ -3,31 +3,34 @@ Unit tests for chemical parser.
 
 Copyright 2026. Andrew Wang.
 """
-from typing import Dict, List, Union
+from typing import cast, List, TypedDict
 from json import load
 from pytest import mark
 from src import solve
 
 
-def _get_test_equations() -> \
-        List[Dict[str, Union[List[str], List[int]]]]:
+class Equation(TypedDict):
+    """JSON structure for equations."""
+    left_mols: List[str]
+    right_mols: List[str]
+    left_coefs: List[int]
+    right_coefs: List[int]
+
+
+def _get_test_equations() -> List[Equation]:
     """Parse the test cases JSON."""
     with open('test/equations.json', encoding='UTF-8') as fp:
-        return load(fp)
+        return cast(List[Equation], load(fp))
 
 
 @mark.parametrize('equation', _get_test_equations())
-def test_balance(equation: Dict[str, Union[List[str], List[int]]]):
+def test_balance(equation: Equation) -> None:
     """Assert that the balanced equations are correct."""
     left_mols = equation['left_mols']
     right_mols = equation['right_mols']
-    assert all(isinstance(mol, str) for mol in left_mols)
-    assert all(isinstance(mol, str) for mol in right_mols)
     left_coefs_expected = equation['left_coefs']
     right_coefs_expected = equation['right_coefs']
-    assert all(isinstance(coef, int) for coef in left_coefs_expected)
-    assert all(isinstance(coef, int) for coef in right_coefs_expected)
-    solutions = list(solve(left_mols, right_mols))  # type:  ignore
+    solutions = list(solve(left_mols, right_mols))
     assert len(solutions) == 1, 'Solution should be unique.'
     left_coefs_actual, right_coefs_actual = solutions[0]
     assert left_coefs_actual.tolist() == left_coefs_expected
