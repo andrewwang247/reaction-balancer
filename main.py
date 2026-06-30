@@ -28,7 +28,7 @@ def _display_solution(coefs: npt.NDArray[np.int_],
         help='Right side of chemical reaction.')
 @option('--verbose', '-v', is_flag=True, default=False,
         help='Set verbosity of solving process.')
-def main(left: Tuple[str, ...], right: Tuple[str, ...], verbose: bool):
+def main(left: Tuple[str, ...], right: Tuple[str, ...], verbose: bool) -> None:
     """Balance user-provided chemical reactions."""
     logging.basicConfig(level=logging.INFO if verbose else logging.WARN)
     solutions = list(solve(left, right))
