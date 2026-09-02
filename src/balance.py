@@ -13,7 +13,7 @@ from itertools import chain
 
 import numpy as np
 import numpy.typing as npt
-from sympy import Matrix, Rational  # type: ignore[import-not-found]
+from sympy import Matrix, Rational
 
 from .parse import parse
 
