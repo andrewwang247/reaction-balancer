@@ -12,17 +12,19 @@ if TYPE_CHECKING:
 from itertools import chain
 
 import numpy as np
-import numpy.typing as npt
 from sympy import Matrix, Rational
 
 from .parse import parse
 
 logger = logging.getLogger(__name__)
 
+type IntArr = np.ndarray[tuple[int], np.dtype[np.int_]]
+type ObjArr = np.ndarray[tuple[int], np.dtype[np.object_]]
+
 
 def _distinct_elems(mols: list[defaultdict[str, int]]) -> list[str]:
     """Get the distinct elements that form the molecules."""
-    elems = set()
+    elems: set[str] = set()
     for mol in mols:
         for key in mol:
             elems.add(key)
@@ -30,13 +32,13 @@ def _distinct_elems(mols: list[defaultdict[str, int]]) -> list[str]:
     return list(elems)
 
 
-def _scale_to_integers(rationals: list[Rational]) -> npt.NDArray[np.int_]:
+def _scale_to_integers(rationals: list[Rational]) -> IntArr:
     """Scale a list of rationals to integers."""
     rational_rep = [num.as_numer_denom() for num in rationals]
     numers = np.array([rat[0] for rat in rational_rep])
     denoms = np.array([rat[1] for rat in rational_rep])
     lcm = np.lcm.reduce(denoms)
-    coefs: npt.NDArray[np.object_] = numers * lcm / denoms
+    coefs: ObjArr = numers * lcm / denoms
     coefs /= np.gcd.reduce(coefs)
     return coefs.astype(int)
 
@@ -44,7 +46,7 @@ def _scale_to_integers(rationals: list[Rational]) -> npt.NDArray[np.int_]:
 def solve(
     lhs: Iterable[str],
     rhs: Iterable[str],
-) -> Iterable[tuple[npt.NDArray[np.int_], npt.NDArray[np.int_]]]:
+) -> Iterable[tuple[IntArr, IntArr]]:
     """Balance left and right sides of chemical equation."""
     left = [parse(mol) for mol in lhs]
     right = [parse(mol) for mol in rhs]

@@ -3,5 +3,6 @@
 Copyright 2026. Andrew Wang.
 """
 
+from .balance import IntArr as IntArr
 from .balance import solve as solve
 from .parse import parse as parse
