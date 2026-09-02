@@ -4,17 +4,13 @@ Copyright 2026. Andrew Wang.
 """
 
 import logging
-from typing import TYPE_CHECKING
 
-if TYPE_CHECKING:
-    import numpy as np
-    import numpy.typing as npt
 from click import command, option
 
-from src import solve
+from src import IntArr, solve
 
 
-def _display_solution(coefs: npt.NDArray[np.int_], mols: tuple[str, ...]) -> str:
+def _display_solution(coefs: IntArr, mols: tuple[str, ...]) -> str:
     """Construct string of coefficients and molecules."""
     multipled = []
     for coef, mol in zip(coefs, mols, strict=True):
