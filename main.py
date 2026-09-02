@@ -13,8 +13,6 @@ from click import command, option
 
 from src import solve
 
-# pylint: disable=no-value-for-parameter
-
 
 def _display_solution(coefs: npt.NDArray[np.int_], mols: tuple[str, ...]) -> str:
     """Construct string of coefficients and molecules."""
