@@ -22,7 +22,7 @@ def _find_closing_paren(mol: str, start_idx: int) -> int:
         if stack_count == 0:
             return idx
     err_msg = f"Could not find closing paren for {mol}"
-    raise ValueError(err_msg)
+    raise AssertionError(err_msg)
 
 
 def parse(mol: str) -> defaultdict[str, int]:
