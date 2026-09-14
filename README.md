@@ -124,4 +124,4 @@ Thus, the balanced equation is $CH_4 + 2 \\, O_2 \to CO_2 + 2 \\, H_2 O$.
 
 ## Testing
 
-Both parsing and balancing are validated with extensive unit testing. The test cases for parsing and balancing are stored in `test/molecules.json` and `test/equations.json`, respectively. Run `pytest` to execute the full suite of tests.
+Both parsing and balancing are validated with extensive unit testing. The test cases for parsing and balancing are stored in `resources/molecules.json` and `resources/equations.json`, respectively. Run `pytest` to execute the full suite of tests.

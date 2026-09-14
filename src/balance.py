@@ -7,14 +7,13 @@ import logging
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from collections import defaultdict
     from collections.abc import Iterable
 from itertools import chain
 
 import numpy as np
 from sympy import Matrix, Rational
 
-from .parse import parse
+from .parse import Elements, parse
 
 logger = logging.getLogger(__name__)
 
@@ -22,7 +21,7 @@ type IntArr = np.ndarray[tuple[int], np.dtype[np.int_]]
 type ObjArr = np.ndarray[tuple[int], np.dtype[np.object_]]
 
 
-def _distinct_elems(mols: list[defaultdict[str, int]]) -> list[str]:
+def _distinct_elems(mols: list[Elements]) -> list[str]:
     """Get the distinct elements that form the molecules."""
     elems: set[str] = set()
     for mol in mols:

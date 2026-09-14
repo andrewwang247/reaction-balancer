@@ -10,6 +10,8 @@ from itertools import chain
 _PATTERN = re.compile(r"([A-Z][a-z]*)(\d*)")
 _SUB_PATTERN = re.compile(r"\d+")
 
+type Elements = defaultdict[str, int]
+
 
 def _find_closing_paren(mol: str, start_idx: int) -> int:
     """Find a closing paren given the starting idx of opening paren."""
@@ -25,9 +27,9 @@ def _find_closing_paren(mol: str, start_idx: int) -> int:
     raise AssertionError(err_msg)
 
 
-def parse(mol: str) -> defaultdict[str, int]:
+def parse(mol: str) -> Elements:
     """Parse the molecule into constituent element counts."""
-    elements: defaultdict[str, int] = defaultdict(int)
+    elements: Elements = defaultdict(int)
     left_paren = mol.find("(")
     if left_paren == -1:
         for match in _PATTERN.finditer(mol):
