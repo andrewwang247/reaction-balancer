@@ -52,10 +52,7 @@ def main(left: tuple[str, ...], right: tuple[str, ...], *, verbose: bool) -> Non
     left_elems = [parse(mol) for mol in left]
     right_elems = [parse(mol) for mol in right]
     solutions = solve(left_elems, right_elems)
-    if len(solutions) == 0:
-        print("No solutions found.")
-    else:
-        print(f"Solutions ({len(solutions)}):")
+    print(f"Solutions ({len(solutions)}):" if solutions else "No solutions found.")
     for left_coef, right_coef in solutions:
         left_disp = _display_solution(left_coef, left)
         right_disp = _display_solution(right_coef, right)
