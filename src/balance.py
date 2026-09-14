@@ -37,7 +37,7 @@ def _scale_to_integers(rationals: list[Rational]) -> IntArr:
     lcm = np.lcm.reduce(denoms)
     coefs: ObjArr = numers * lcm / denoms
     coefs /= np.gcd.reduce(coefs)
-    return coefs.astype(int)
+    return coefs.astype(np.int_)
 
 
 def solve(
@@ -46,7 +46,7 @@ def solve(
 ) -> list[tuple[IntArr, IntArr]]:
     """Balance left and right sides of chemical equation."""
     elems = _distinct_elems(left + right)
-    lin_sys = np.zeros((len(elems), len(left) + len(right)), dtype=int)
+    lin_sys = np.zeros((len(elems), len(left) + len(right)), dtype=np.int_)
 
     for idx_elem, elem in enumerate(elems):
         for idx_mol, mol in enumerate(chain(left, right)):
