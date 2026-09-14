@@ -20,50 +20,50 @@ The custom parser supports standard chemical formulas consisting of elements, su
 
 ```text
 $ python3 main.py -l KNO3 -l C12H22O11 -r N2 -r CO2 -r H2O -r K2CO3 -v
-INFO:balance:Molecules (L): ['KNO3', 'C12H22O11']
-INFO:balance:Molecules (R): ['N2', 'CO2', 'H2O', 'K2CO3']
-INFO:balance:Distinct elements (5): {'N', 'H', 'O', 'K', 'C'}
-INFO:balance:Linear system of equations matrix:
-[[ 1  0 -2  0  0  0]
- [ 0 22  0  0 -2  0]
- [ 3 11  0 -2 -1 -3]
+INFO:__main__:Molecules (L): ('KNO3', 'C12H22O11')
+INFO:__main__:Molecules (R): ('N2', 'CO2', 'H2O', 'K2CO3')
+INFO:src.balance:Distinct elements (5): {'C', 'N', 'K', 'H', 'O'}
+INFO:src.balance:Linear system of equations matrix:
+[[ 0 12  0 -1  0 -1]
+ [ 1  0 -2  0  0  0]
  [ 1  0  0  0  0 -2]
- [ 0 12  0 -1  0 -1]]
-INFO:balance:Nullity = 1
-INFO:balance:Kernel basis vector [2, 5/24, 1, 3/2, 55/24, 1] scaled to [48 5 24 36 55 24]
+ [ 0 22  0  0 -2  0]
+ [ 3 11  0 -2 -1 -3]]
+INFO:src.balance:Nullity = 1
+INFO:src.balance:Kernel basis vector [2, 5/24, 1, 3/2, 55/24, 1] scaled to [48  5 24 36 55 24]
 Solutions (1):
     48 KNO3 + 5 C12H22O11 -> 24 N2 + 36 CO2 + 55 H2O + 24 K2CO3
 ```
 
 ```text
 $ python3 main.py -l "Al(OH)3" -l H2SO4 -r "Al2(SO4)3" -r H2O -v
-INFO:balance:Molecules (L): ['Al(OH)3', 'H2SO4']
-INFO:balance:Molecules (R): ['Al2(SO4)3', 'H2O']
-INFO:balance:Distinct elements (4): {'S', 'H', 'Al', 'O'}
-INFO:balance:Linear system of equations matrix:
+INFO:__main__:Molecules (L): ('Al(OH)3', 'H2SO4')
+INFO:__main__:Molecules (R): ('Al2(SO4)3', 'H2O')
+INFO:src.balance:Distinct elements (4): {'S', 'Al', 'H', 'O'}
+INFO:src.balance:Linear system of equations matrix:
 [[  0   1  -3   0]
- [  3   2   0  -2]
  [  1   0  -2   0]
+ [  3   2   0  -2]
  [  3   4 -12  -1]]
-INFO:balance:Nullity = 1
-INFO:balance:Kernel basis vector [1/3, 1/2, 1/6, 1] scaled to [2 3 1 6]
+INFO:src.balance:Nullity = 1
+INFO:src.balance:Kernel basis vector [1/3, 1/2, 1/6, 1] scaled to [2 3 1 6]
 Solutions (1):
     2 Al(OH)3 + 3 H2SO4 -> Al2(SO4)3 + 6 H2O
 ```
 
 ```text
 $ python3 main.py -l H -l P -l O -r H -r P -r O2 -v
-INFO:balance:Molecules (L): ['H', 'P', 'O']
-INFO:balance:Molecules (R): ['H', 'P', 'O2']
-INFO:balance:Distinct elements (3): {'P', 'O', 'H'}
-INFO:balance:Linear system of equations matrix:
+INFO:__main__:Molecules (L): ('H', 'P', 'O')
+INFO:__main__:Molecules (R): ('H', 'P', 'O2')
+INFO:src.balance:Distinct elements (3): {'P', 'O', 'H'}
+INFO:src.balance:Linear system of equations matrix:
 [[ 0  1  0  0 -1  0]
  [ 0  0  1  0  0 -2]
  [ 1  0  0 -1  0  0]]
-INFO:balance:Nullity = 3
-INFO:balance:Kernel basis vector [1, 0, 0, 1, 0, 0] scaled to [1 0 0 1 0 0]
-INFO:balance:Kernel basis vector [0, 1, 0, 0, 1, 0] scaled to [0 1 0 0 1 0]
-INFO:balance:Kernel basis vector [0, 0, 2, 0, 0, 1] scaled to [0 0 2 0 0 1]
+INFO:src.balance:Nullity = 3
+INFO:src.balance:Kernel basis vector [1, 0, 0, 1, 0, 0] scaled to [1 0 0 1 0 0]
+INFO:src.balance:Kernel basis vector [0, 1, 0, 0, 1, 0] scaled to [0 1 0 0 1 0]
+INFO:src.balance:Kernel basis vector [0, 0, 2, 0, 0, 1] scaled to [0 0 2 0 0 1]
 Solutions (3):
     H + 0 P + 0 O -> H + 0 P + 0 O2
     0 H + P + 0 O -> 0 H + P + 0 O2
@@ -72,13 +72,13 @@ Solutions (3):
 
 ```text
 $ python3 main.py -l C -r Ne -v
-INFO:balance:Molecules (L): ['C']
-INFO:balance:Molecules (R): ['Ne']
-INFO:balance:Distinct elements (2): {'Ne', 'C'}
-INFO:balance:Linear system of equations matrix:
-[[ 0 -1]
- [ 1  0]]
-INFO:balance:Nullity = 0
+INFO:__main__:Molecules (L): ('C',)
+INFO:__main__:Molecules (R): ('Ne',)
+INFO:src.balance:Distinct elements (2): {'C', 'Ne'}
+INFO:src.balance:Linear system of equations matrix:
+[[ 1  0]
+ [ 0 -1]]
+INFO:src.balance:Nullity = 0
 No solutions found.
 ```
 

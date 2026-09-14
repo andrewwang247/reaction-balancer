@@ -4,16 +4,14 @@ Copyright 2026. Andrew Wang.
 """
 
 import logging
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from collections.abc import Iterable
 from itertools import chain
+from typing import TYPE_CHECKING
 
 import numpy as np
 from sympy import Matrix, Rational
 
-from .parse import Elements, parse
+if TYPE_CHECKING:
+    from .parse import Elements
 
 logger = logging.getLogger(__name__)
 
@@ -43,17 +41,13 @@ def _scale_to_integers(rationals: list[Rational]) -> IntArr:
 
 
 def solve(
-    lhs: Iterable[str],
-    rhs: Iterable[str],
-) -> Iterable[tuple[IntArr, IntArr]]:
+    left: list[Elements],
+    right: list[Elements],
+) -> list[tuple[IntArr, IntArr]]:
     """Balance left and right sides of chemical equation."""
-    left = [parse(mol) for mol in lhs]
-    right = [parse(mol) for mol in rhs]
-    logger.info("Molecules (L): %s", list(left))
-    logger.info("Molecules (R): %s", list(right))
     elems = _distinct_elems(left + right)
-
     lin_sys = np.zeros((len(elems), len(left) + len(right)), dtype=int)
+
     for idx_elem, elem in enumerate(elems):
         for idx_mol, mol in enumerate(chain(left, right)):
             lin_sys[idx_elem, idx_mol] = mol[elem]
@@ -67,10 +61,13 @@ def solve(
     kernel: list[list[Rational]] = [null_basis.flat() for null_basis in nullspace]
 
     logger.info("Nullity = %d", len(kernel))
+    solutions: list[tuple[IntArr, IntArr]] = []
     for ker in kernel:
         coefs = _scale_to_integers(ker)
         logger.info("Kernel basis vector %s scaled to %s", ker, coefs)
         if np.any(coefs < 0) and np.any(coefs > 0):
             continue
         coefs = np.abs(coefs)
-        yield coefs[: len(left)], coefs[len(left) :]
+        cut = len(left)
+        solutions.append((coefs[:cut], coefs[cut:]))
+    return solutions

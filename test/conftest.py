@@ -10,6 +10,8 @@ from typing import Any
 
 import pytest
 
+from src import Elements, parse
+
 _RESOURCE_DIR = Path("resources")
 
 
@@ -25,8 +27,8 @@ class Molecule:
 class Equation:
     """JSON structure for equations."""
 
-    left_mols: list[str]
-    right_mols: list[str]
+    left_mols: list[Elements]
+    right_mols: list[Elements]
     left_coefs: list[int]
     right_coefs: list[int]
 
@@ -53,8 +55,9 @@ def molecule(request: pytest.FixtureRequest) -> Molecule:
 def equation(request: pytest.FixtureRequest) -> Equation:
     """Configure equation data."""
     rs: dict[str, Any] = request.param
-    left_mols: list[str] = rs["left_mols"]
-    right_mols: list[str] = rs["right_mols"]
+
+    left_mols = [parse(mol) for mol in rs["left_mols"]]
+    right_mols = [parse(mol) for mol in rs["right_mols"]]
     left_coefs: list[int] = rs["left_coefs"]
     right_coefs: list[int] = rs["right_coefs"]
     return Equation(left_mols, right_mols, left_coefs, right_coefs)

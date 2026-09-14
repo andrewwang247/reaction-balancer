@@ -7,7 +7,9 @@ import logging
 
 from click import command, option
 
-from src import IntArr, solve
+from src import IntArr, parse, solve
+
+logger = logging.getLogger(__name__)
 
 
 def _display_solution(coefs: IntArr, mols: tuple[str, ...]) -> str:
@@ -45,7 +47,11 @@ def _display_solution(coefs: IntArr, mols: tuple[str, ...]) -> str:
 def main(left: tuple[str, ...], right: tuple[str, ...], *, verbose: bool) -> None:
     """Balance user-provided chemical reactions."""
     logging.basicConfig(level=logging.INFO if verbose else logging.WARNING)
-    solutions = list(solve(left, right))
+    logger.info("Molecules (L): %s", left)
+    logger.info("Molecules (R): %s", right)
+    left_elems = [parse(mol) for mol in left]
+    right_elems = [parse(mol) for mol in right]
+    solutions = solve(left_elems, right_elems)
     if len(solutions) == 0:
         print("No solutions found.")
     else:

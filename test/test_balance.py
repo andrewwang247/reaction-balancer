@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 
 def test_balance(equation: Equation) -> None:
     """Assert that the balanced equations are correct."""
-    solutions = list(solve(equation.left_mols, equation.right_mols))
+    solutions = solve(equation.left_mols, equation.right_mols)
     assert len(solutions) == 1, "Solution should be unique."
     left_coefs, right_coefs = solutions[0]
     assert left_coefs.tolist() == equation.left_coefs
