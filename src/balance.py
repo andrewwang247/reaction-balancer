@@ -21,10 +21,7 @@ type ObjArr = np.ndarray[tuple[int], np.dtype[np.object_]]
 
 def _distinct_elems(mols: list[Elements]) -> list[str]:
     """Get the distinct elements that form the molecules."""
-    elems: set[str] = set()
-    for mol in mols:
-        for key in mol:
-            elems.add(key)
+    elems = {key for mol in mols for key in mol}
     logger.info("Distinct elements (%d): %s", len(elems), elems)
     return list(elems)
 
