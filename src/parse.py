@@ -17,14 +17,15 @@ def _find_closing_paren(mol: str, start_idx: int) -> int:
     """Find a closing paren given the starting idx of opening paren."""
     stack_count = 1
     for idx in range(start_idx + 1, len(mol)):
-        if mol[idx] == "(":
-            stack_count += 1
-        elif mol[idx] == ")":
-            stack_count -= 1
+        match mol[idx]:
+            case "(":
+                stack_count += 1
+            case ")":
+                stack_count -= 1
         if stack_count == 0:
             return idx
     err_msg = f"Could not find closing paren for {mol}"
-    raise AssertionError(err_msg)
+    raise ValueError(err_msg)
 
 
 def parse(mol: str) -> Elements:
@@ -33,8 +34,8 @@ def parse(mol: str) -> Elements:
     left_paren = mol.find("(")
     if left_paren == -1:
         for match in _PATTERN.finditer(mol):
-            elem, sub = match.group(1, 2)
-            elements[elem] += int(sub) if sub else 1
+            elem, subscript = match.group(1, 2)
+            elements[elem] += int(subscript) if subscript else 1
     else:
         right_paren = _find_closing_paren(mol, left_paren)
         paren = parse(mol[left_paren + 1 : right_paren])
