@@ -18,7 +18,7 @@ Options:
 
 The custom parser supports standard chemical formulas consisting of elements, subscripts, and nested parentheses. Some examples:
 
-```text
+```console
 $ python3 main.py -l KNO3 -l C12H22O11 -r N2 -r CO2 -r H2O -r K2CO3 -v
 INFO:__main__:Molecules (L): ('KNO3', 'C12H22O11')
 INFO:__main__:Molecules (R): ('N2', 'CO2', 'H2O', 'K2CO3')
@@ -35,7 +35,7 @@ Solutions (1):
     48 KNO3 + 5 C12H22O11 -> 24 N2 + 36 CO2 + 55 H2O + 24 K2CO3
 ```
 
-```text
+```console
 $ python3 main.py -l "Al(OH)3" -l H2SO4 -r "Al2(SO4)3" -r H2O -v
 INFO:__main__:Molecules (L): ('Al(OH)3', 'H2SO4')
 INFO:__main__:Molecules (R): ('Al2(SO4)3', 'H2O')
@@ -51,7 +51,7 @@ Solutions (1):
     2 Al(OH)3 + 3 H2SO4 -> Al2(SO4)3 + 6 H2O
 ```
 
-```text
+```console
 $ python3 main.py -l H -l P -l O -r H -r P -r O2 -v
 INFO:__main__:Molecules (L): ('H', 'P', 'O')
 INFO:__main__:Molecules (R): ('H', 'P', 'O2')
@@ -70,7 +70,7 @@ Solutions (3):
     0 H + 0 P + 2 O -> 0 H + 0 P + O2
 ```
 
-```text
+```console
 $ python3 main.py -l C -r Ne -v
 INFO:__main__:Molecules (L): ('C',)
 INFO:__main__:Molecules (R): ('Ne',)
